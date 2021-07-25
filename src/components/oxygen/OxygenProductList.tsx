@@ -10,23 +10,23 @@ import {
 import { PhoneIcon } from "@chakra-ui/icons";
 
 // API & stores
-import { useFetchActiveMarkers } from "src/hooks/useMarkers";
+import { useFetchActiveProducts } from "src/hooks/useProducts";
 
 const OxygenProductList = () => {
   const {
-    coordinates: data,
+    products: data,
     isLoading,
     isError,
-  }: any = useFetchActiveMarkers();
+  }: any = useFetchActiveProducts();
 
   const RenderOxygenList = ({ item }: any) => {
     return (
       <Box p={2} mt={2}>
         <Heading as="h5" size="sm">
-          {item.title}
+          {item.name}
         </Heading>
-        <Text>{item.address}</Text>
-
+        <Text mt={2} fontWeight="bold" color="gray.500">{item.address}</Text>
+        <Text mt={2}>{item.message}</Text>
         {item.phoneNumbers.map((number: string) => (
           <Flex
             key={number}
