@@ -35,7 +35,6 @@ const Map: React.FC = () => {
   const { coordinates }: any = useFetchActiveMarkers();
 
   const onClickOnMarker = (e: any, item: any) => {
-    console.log('map', item);
     e.preventDefault();
     setActivePoint(item);
   };
@@ -50,7 +49,7 @@ const Map: React.FC = () => {
         btnRef={btnInfoDrawerRef}
       />
       <MapGL
-        style={{ width: window.innerWidth, height: window.innerHeight }}
+        style={{ width: '100vh', height: '100vh' }}
         mapStyle="mapbox://styles/r4y/ckqy4djcy3pam17qu6nc59gy4"
         latitude={viewport.latitude}
         mapboxApiAccessToken={process.env.REACT_APP_MAP_ACCESS_TOKEN}
