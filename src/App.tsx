@@ -10,7 +10,7 @@ function App() {
   return (
     <Router history={history}>
       <Route exact path="/map" component={Map} />
-      <Route path="/" component={Home} />
+      <Route exact path="/" component={Home} />
     </Router>
   );
 }

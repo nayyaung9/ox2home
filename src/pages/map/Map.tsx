@@ -30,6 +30,8 @@ const Map: React.FC = () => {
     latitude: 16.805312353924744,
     longitude: 96.15919476831377,
     zoom: 12,
+    width: "100vh",
+    height: "100vh",
   });
 
   const { coordinates }: any = useFetchActiveMarkers();
@@ -40,7 +42,7 @@ const Map: React.FC = () => {
   };
 
   return (
-    <React.Fragment>
+    <div id="main-app">
       {/* This component is used to see the information of this map */}
 
       <InfoDrawer
@@ -49,7 +51,7 @@ const Map: React.FC = () => {
         btnRef={btnInfoDrawerRef}
       />
       <MapGL
-        style={{ width: '100vh', height: '100vh' }}
+        style={{ width: "100%", height: "100vh" }}
         mapStyle="mapbox://styles/r4y/ckqy4djcy3pam17qu6nc59gy4"
         latitude={viewport.latitude}
         mapboxApiAccessToken={process.env.REACT_APP_MAP_ACCESS_TOKEN}
@@ -83,7 +85,7 @@ const Map: React.FC = () => {
           onOpenInfoDrawer={onOpenInfoDrawer}
         />
       </MapGL>
-    </React.Fragment>
+    </div>
   );
 };
 

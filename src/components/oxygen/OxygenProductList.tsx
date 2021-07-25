@@ -12,13 +12,12 @@ import { PhoneIcon } from "@chakra-ui/icons";
 // API & stores
 import { useFetchActiveMarkers } from "src/hooks/useMarkers";
 
-const CurrentOxygenList = () => {
+const OxygenProductList = () => {
   const {
     coordinates: data,
     isLoading,
     isError,
   }: any = useFetchActiveMarkers();
-  console.log("data", data);
 
   const RenderOxygenList = ({ item }: any) => {
     return (
@@ -33,7 +32,6 @@ const CurrentOxygenList = () => {
             key={number}
             alignItems="center"
             justifyContent="space-between"
-            pt={2}
             pb={4}
           >
             <Text fontWeight="bold" color="gray.500">
@@ -54,9 +52,9 @@ const CurrentOxygenList = () => {
   };
 
   return (
-    <Box p={2} bgColor="white">
+    <Box p={2} bgColor="white" mt={4}>
       <Heading as="h4" size="md">
-        လက်ရှိ အောက်စီဂျင် ရရှိသောနေရာများ
+        အောက်စီဂျင်နှင့် ဆက်စပ်ပစ္စည်းများ
       </Heading>
       {isError ? (
         <Text align="center" my="10">
@@ -79,4 +77,4 @@ const CurrentOxygenList = () => {
   );
 };
 
-export default CurrentOxygenList;
+export default OxygenProductList;
